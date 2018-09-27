@@ -1,11 +1,18 @@
 //import librarries
 import React from 'react'
-import { Text, AppRegistry } from 'react-native'
+import { View, AppRegistry } from 'react-native'
 import { name as appName } from './app.json';
+
+import Header from './src/components/Header'
+import AlbumList from './src/components/AlbumList/AlbumList';
 
 //create component
 const App = () => (
-    <Text style={{paddingTop: '20px'}}>text</Text>
+    <View>
+        <Header headerText='Albums' />
+        <AlbumList />
+    </View>
+
 )
 
 
