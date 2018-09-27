@@ -20,6 +20,7 @@ class AlbumList extends Component {
                 key={album.title}
                 albumTitle={album.title} 
                 albumArtist={album.artist}
+                albumThumbnail={album.thumbnail}
                 albumImg={album.image}
                 albumUrl={album.url}
             />);
