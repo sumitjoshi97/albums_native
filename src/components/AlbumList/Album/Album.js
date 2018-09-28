@@ -1,11 +1,14 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Linking } from "react-native";
 import Card from "../../Card/Card";
 import CardItem from "../../Card/CardItem/Carditem";
+import Button from "../../Button/Button";
 
 const Album = ({ album }) => {
-  const { title, artist, thumbnail_image, image } = album;
+  //destructuring props to separate properties
+  const { title, artist, thumbnail_image, image, url } = album;
 
+  // destructuring separate styles from styles constant
   const {
     thumbnailContainerStyle,
     thumbnailStyle,
@@ -27,7 +30,9 @@ const Album = ({ album }) => {
       </CardItem>
       <CardItem>
         <Image style={imageStyle} source={{ uri: image }} />
-        {console.log(image)}
+      </CardItem>
+      <CardItem>
+        <Button onPress={() => Linking.openURL(url)} />
       </CardItem>
     </Card>
   );
